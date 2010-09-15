@@ -14,7 +14,7 @@ namespace SSISDownloadFileTask100.SSIS
         DisplayName = "Download File Task",
         UITypeName = "SSISDownloadFileTask100.SSISDownloadFileTaskUIInterface" +
         ",SSISDownloadFileTask100," +
-        "Version=1.0.0.12," +
+        "Version=1.0.0.13," +
         "Culture=Neutral," +
         "PublicKeyToken=fe104a4a72746eeb",
         IconResource = "SSISDownloadFileTask100.DownloadIcon.ico",
@@ -217,7 +217,7 @@ namespace SSISDownloadFileTask100.SSIS
                 for (int index = 0; index < mappedParams.Length - 1; index++)
                 {
                     var param = mappedParams[index].Split(new [] { "::" }, StringSplitOptions.RemoveEmptyEntries)[1];
-                    variableDispenser.LockForRead(param.Substring(0, param.IndexOf(']') - 1));
+                    variableDispenser.LockForRead(param.Substring(0, param.IndexOf(']')));
                 }
             }
             catch
