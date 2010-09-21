@@ -39,7 +39,6 @@
             this.btCancel = new System.Windows.Forms.Button();
             this.btExpressionSource = new System.Windows.Forms.Button();
             this.btExpressionDestination = new System.Windows.Forms.Button();
-            this.btExpressionConnectionPath = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -133,15 +132,6 @@
             this.btExpressionDestination.UseVisualStyleBackColor = true;
             this.btExpressionDestination.Click += new System.EventHandler(this.btExpressionDestination_Click);
             // 
-            // btExpressionConnectionPath
-            // 
-            this.btExpressionConnectionPath.Location = new System.Drawing.Point(465, 16);
-            this.btExpressionConnectionPath.Name = "btExpressionConnectionPath";
-            this.btExpressionConnectionPath.Size = new System.Drawing.Size(29, 23);
-            this.btExpressionConnectionPath.TabIndex = 10;
-            this.btExpressionConnectionPath.Text = "...";
-            this.btExpressionConnectionPath.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -161,7 +151,6 @@
             this.CancelButton = this.btCancel;
             this.ClientSize = new System.Drawing.Size(522, 183);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btExpressionConnectionPath);
             this.Controls.Add(this.btExpressionDestination);
             this.Controls.Add(this.btExpressionSource);
             this.Controls.Add(this.btCancel);
@@ -196,7 +185,6 @@
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btExpressionSource;
         private System.Windows.Forms.Button btExpressionDestination;
-        private System.Windows.Forms.Button btExpressionConnectionPath;
         private System.Windows.Forms.TextBox textBox1;
     }
 }
