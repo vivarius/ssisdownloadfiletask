@@ -39,7 +39,7 @@
             this.btCancel = new System.Windows.Forms.Button();
             this.btExpressionSource = new System.Windows.Forms.Button();
             this.btExpressionDestination = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // cmbHttpConnectionManager
@@ -48,7 +48,7 @@
             this.cmbHttpConnectionManager.FormattingEnabled = true;
             this.cmbHttpConnectionManager.Location = new System.Drawing.Point(157, 16);
             this.cmbHttpConnectionManager.Name = "cmbHttpConnectionManager";
-            this.cmbHttpConnectionManager.Size = new System.Drawing.Size(300, 21);
+            this.cmbHttpConnectionManager.Size = new System.Drawing.Size(337, 21);
             this.cmbHttpConnectionManager.TabIndex = 0;
             // 
             // lbHTTPConnection
@@ -94,7 +94,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(173, 123);
+            this.btSave.Location = new System.Drawing.Point(338, 123);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 36);
             this.btSave.TabIndex = 6;
@@ -105,7 +105,7 @@
             // btCancel
             // 
             this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btCancel.Location = new System.Drawing.Point(254, 123);
+            this.btCancel.Location = new System.Drawing.Point(419, 123);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(75, 36);
             this.btCancel.TabIndex = 7;
@@ -132,16 +132,16 @@
             this.btExpressionDestination.UseVisualStyleBackColor = true;
             this.btExpressionDestination.Click += new System.EventHandler(this.btExpressionDestination_Click);
             // 
-            // textBox1
+            // linkLabel1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(307, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(217, 13);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "http//ssisdownloadfiletask.codeplex.com";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(13, 146);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(200, 13);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "http//ssisdownloadfiletask.codeplex.com";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // frmEditProperties
             // 
@@ -149,8 +149,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancel;
-            this.ClientSize = new System.Drawing.Size(522, 183);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(509, 167);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btExpressionDestination);
             this.Controls.Add(this.btExpressionSource);
             this.Controls.Add(this.btCancel);
@@ -185,6 +185,6 @@
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btExpressionSource;
         private System.Windows.Forms.Button btExpressionDestination;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

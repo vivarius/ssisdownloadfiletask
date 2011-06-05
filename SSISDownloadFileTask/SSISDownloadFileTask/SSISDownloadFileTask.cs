@@ -14,7 +14,7 @@ namespace SSISDownloadFileTask100.SSIS
         DisplayName = "Download File Task",
         UITypeName = "SSISDownloadFileTask100.SSISDownloadFileTaskUIInterface" +
         ",SSISDownloadFileTask100," +
-        "Version=1.0.0.13," +
+        "Version=1.1.0.0," +
         "Culture=Neutral," +
         "PublicKeyToken=fe104a4a72746eeb",
         IconResource = "SSISDownloadFileTask100.DownloadIcon.ico",
@@ -132,7 +132,7 @@ namespace SSISDownloadFileTask100.SSIS
             catch (Exception ex)
             {
                 componentEvents.FireError(0,
-                                          "SSISAssemblyTask",
+                                          "SSISDownloadFileTask",
                                           string.Format("Problem: {0}",
                                                         ex.Message),
                                           "",
@@ -175,7 +175,7 @@ namespace SSISDownloadFileTask100.SSIS
             {
                 retVal = false;
                 componentEvents.FireError(0,
-                                         "SSISAssemblyTask",
+                                         "SSISDownloadFileTask",
                                          string.Format("Problem: {0}",
                                                        exception.Message),
                                          "",
@@ -198,13 +198,19 @@ namespace SSISDownloadFileTask100.SSIS
         private static object EvaluateExpression(string mappedParam, VariableDispenser variableDispenser)
         {
             object variableObject = null;
-
-            var expressionEvaluatorClass = new ExpressionEvaluatorClass
+            try
             {
-                Expression = mappedParam
-            };
+                var expressionEvaluatorClass = new ExpressionEvaluatorClass
+                {
+                    Expression = mappedParam
+                };
 
-            expressionEvaluatorClass.Evaluate(DtsConvert.GetExtendedInterface(variableDispenser), out variableObject, false);
+                expressionEvaluatorClass.Evaluate(DtsConvert.GetExtendedInterface(variableDispenser), out variableObject, false);
+            }
+            catch
+            {
+                variableObject = mappedParam;
+            }
             return variableObject;
         }
 
