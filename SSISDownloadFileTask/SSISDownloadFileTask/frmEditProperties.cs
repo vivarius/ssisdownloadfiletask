@@ -43,9 +43,9 @@ namespace SSISDownloadFileTask100
             {
                 LoadFileConnections();
 
-                cmbHttpConnectionManager.SelectedIndex = cmbHttpConnectionManager.FindString(_taskHost.Properties[NamedStringMembers.HTTP_CONNECTOR].GetValue(_taskHost).ToString());
-                txSourceFile.Text = _taskHost.Properties[NamedStringMembers.HttpSourceFile].GetValue(_taskHost).ToString();
-                txDestinationFile.Text = _taskHost.Properties[NamedStringMembers.LocalDestinationFile].GetValue(_taskHost).ToString();
+                cmbHttpConnectionManager.SelectedIndex = cmbHttpConnectionManager.FindString(_taskHost.Properties[Keys.HTTP_CONNECTOR].GetValue(_taskHost).ToString());
+                txSourceFile.Text = _taskHost.Properties[Keys.HttpSourceFile].GetValue(_taskHost).ToString();
+                txDestinationFile.Text = _taskHost.Properties[Keys.LocalDestinationFile].GetValue(_taskHost).ToString();
             }
             catch (Exception)
             {
@@ -92,9 +92,9 @@ namespace SSISDownloadFileTask100
         private void btSave_Click(object sender, EventArgs e)
         {
             //Save the values
-            _taskHost.Properties[NamedStringMembers.HTTP_CONNECTOR].SetValue(_taskHost, cmbHttpConnectionManager.Text);
-            _taskHost.Properties[NamedStringMembers.HttpSourceFile].SetValue(_taskHost, txSourceFile.Text);
-            _taskHost.Properties[NamedStringMembers.LocalDestinationFile].SetValue(_taskHost, txDestinationFile.Text);
+            _taskHost.Properties[Keys.HTTP_CONNECTOR].SetValue(_taskHost, cmbHttpConnectionManager.Text);
+            _taskHost.Properties[Keys.HttpSourceFile].SetValue(_taskHost, txSourceFile.Text);
+            _taskHost.Properties[Keys.LocalDestinationFile].SetValue(_taskHost, txDestinationFile.Text);
             DialogResult = DialogResult.OK;
             Close();
         }

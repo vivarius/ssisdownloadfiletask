@@ -63,7 +63,7 @@
     <Compile Include="frmEditProperties.Designer.cs">
       <DependentUpon>frmEditProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="NamedItems.cs" />
+    <Compile Include="Keys.cs" />
     <Compile Include="SSISDownloadFileTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SSISDownloadFileTaskUIInterface.cs" />

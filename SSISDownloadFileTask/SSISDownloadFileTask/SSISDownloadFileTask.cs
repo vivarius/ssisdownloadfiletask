@@ -211,6 +211,7 @@ namespace SSISDownloadFileTask100.SSIS
             {
                 variableObject = mappedParam;
             }
+
             return variableObject;
         }
 
@@ -218,11 +219,11 @@ namespace SSISDownloadFileTask100.SSIS
         {
             try
             {
-                var mappedParams = variableExpression.Split(new [] { "@" }, StringSplitOptions.RemoveEmptyEntries);
+                var mappedParams = variableExpression.Split(new[] { "@" }, StringSplitOptions.RemoveEmptyEntries);
 
                 for (int index = 0; index < mappedParams.Length - 1; index++)
                 {
-                    var param = mappedParams[index].Split(new [] { "::" }, StringSplitOptions.RemoveEmptyEntries)[1];
+                    var param = mappedParams[index].Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries)[1];
                     variableDispenser.LockForRead(param.Substring(0, param.IndexOf(']')));
                 }
             }
@@ -242,13 +243,13 @@ namespace SSISDownloadFileTask100.SSIS
         {
             XmlElement taskElement = doc.CreateElement(string.Empty, "SSISDownloadFileTask", string.Empty);
 
-            XmlAttribute httpConnector = doc.CreateAttribute(string.Empty, NamedStringMembers.HTTP_CONNECTOR, string.Empty);
+            XmlAttribute httpConnector = doc.CreateAttribute(string.Empty, Keys.HTTP_CONNECTOR, string.Empty);
             httpConnector.Value = HttpConnector;
 
-            XmlAttribute httpSourceFile = doc.CreateAttribute(string.Empty, NamedStringMembers.HttpSourceFile, string.Empty);
+            XmlAttribute httpSourceFile = doc.CreateAttribute(string.Empty, Keys.HttpSourceFile, string.Empty);
             httpSourceFile.Value = HttpSourceFile;
 
-            XmlAttribute localDestinationFile = doc.CreateAttribute(string.Empty, NamedStringMembers.LocalDestinationFile, string.Empty);
+            XmlAttribute localDestinationFile = doc.CreateAttribute(string.Empty, Keys.LocalDestinationFile, string.Empty);
             localDestinationFile.Value = LocalDestinationFile;
 
             taskElement.Attributes.Append(httpConnector);
@@ -267,9 +268,9 @@ namespace SSISDownloadFileTask100.SSIS
 
             try
             {
-                HttpConnector = node.Attributes.GetNamedItem(NamedStringMembers.HTTP_CONNECTOR).Value;
-                HttpSourceFile = node.Attributes.GetNamedItem(NamedStringMembers.HttpSourceFile).Value;
-                LocalDestinationFile = node.Attributes.GetNamedItem(NamedStringMembers.LocalDestinationFile).Value;
+                HttpConnector = node.Attributes.GetNamedItem(Keys.HTTP_CONNECTOR).Value;
+                HttpSourceFile = node.Attributes.GetNamedItem(Keys.HttpSourceFile).Value;
+                LocalDestinationFile = node.Attributes.GetNamedItem(Keys.LocalDestinationFile).Value;
             }
             catch
             {
