@@ -14,7 +14,7 @@ namespace SSISDownloadFileTask100.SSIS
         DisplayName = "Download File Task",
         UITypeName = "SSISDownloadFileTask100.SSISDownloadFileTaskUIInterface" +
         ",SSISDownloadFileTask100," +
-        "Version=1.1.0.0," +
+        "Version=1.2.0.0," +
         "Culture=Neutral," +
         "PublicKeyToken=fe104a4a72746eeb",
         IconResource = "SSISDownloadFileTask100.DownloadIcon.ico",

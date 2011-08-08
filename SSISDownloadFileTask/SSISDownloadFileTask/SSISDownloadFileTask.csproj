@@ -77,7 +77,7 @@
     <None Include="SSISDownloadFileTask.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DownloadIcon.ico" />
+    <EmbeddedResource Include="DownloadIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
